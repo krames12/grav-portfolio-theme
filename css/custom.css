@@ -384,7 +384,8 @@ blockquote {
       .about-container .about-sidebar {
         display: block;
         width: 100%;
-        text-align: center; } }
+        text-align: center;
+        margin-left: 0; } }
     .about-container .about-sidebar .recent-blog-posts {
       width: 100%;
       text-align: left;
