@@ -1,0 +1,38 @@
+{% embed 'partials/base.html.twig' %}
+
+  
+  {% block content %}
+  <div class="project-content-video">
+    {% set vimeoUrl = "https://player.vimeo.com/video/" %}
+    {% for vimeoId in page.header.taxonomy.vimeoId %}
+      {{ dump("id", vimeoId) }}
+      {% set vimeoUrl = vimeoUrl + vimeoId %}
+    {% endfor %}
+    {{ dump(vimeoUrl) }}
+    <div class="grav-vimeo">
+      <iframe src="https://player.vimeo.com/video/{{vimeoUrl}}?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    <h2>{{ page.title }}</h2>   
+    <div class="content">
+      {{ page.content }}  
+    </div>
+    <div class="project-meta-container">
+      {% embed 'partials/project-meta-data.html.twig' %}
+      {% endembed %}
+      <section class="meta-individual">
+        {% set projectLink = page.header.taxonomy.link|join('')  %}
+        <a href="{{ projectLink }}" class="download-link">
+          <div class="download-button">
+            <span>Download Project</span>
+          </div>
+        </a>
+      </section>
+    </div> 
+  </div>
+
+  {% embed 'partials/projects-like-this.html.twig' with {'project': page.parent} %}
+  {% endembed %}
+
+  {% endblock %}
+
+{% endembed %}

@@ -1,0 +1,16 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+  <div class="about-container">
+    <div class="about-content">
+      {{ page.content }}
+    </div>
+
+    <div class="about-sidebar">
+      <a class="twitter-timeline" data-width="300" data-height="400" data-theme="light" data-link-color="#9266CC" href="https://twitter.com/Ian_Chase">Tweets by Ian_Chase</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+      {% include 'partials/recent-blog-posts.html.twig' %}
+
+    </div>
+  </div>
+{% endblock %}

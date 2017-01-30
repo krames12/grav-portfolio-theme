@@ -1,0 +1,39 @@
+{% embed 'partials/base.html.twig' %}
+
+  {% set collection = page.collection() %}
+  {% block content %}
+
+  <h2>Portfolio</h2>
+
+  <div class="project-nav text-center">
+    <ul>
+      <li class="project-tag selected" id="application">Application</li>
+      <li class="project-tag" id="3d">3D Art</li>
+      <li class="project-tag" id="animation">Animation</li>
+      <li class="project-tag" id="graphic">Graphic Design</li>
+    </ul>
+  </div>
+
+  <div class="project-wrapper">
+    {% for child in collection %}
+
+    {{ dump(child.media) }}
+      <div class="project-single-container 
+        {% for category in child.taxonomy.category %}
+          {{ category }}
+        {% endfor %}
+      ">
+        <a href=" {{ child.url }} ">
+          <div class="project-overlay text-center">
+            <p class="project-name">{{ child.title }}</p>
+          </div>
+        </a>
+        <img src="{{ child.media['thumbnail.png'].url }}" alt="" class="project-picture" />
+      </div>
+
+    {% endfor %}
+  </div>
+
+  {% endblock %}
+
+{% endembed %}

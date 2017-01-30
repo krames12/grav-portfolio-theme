@@ -1,0 +1,20 @@
+<div class="projects-like-this">
+  <h3>Another Project</h3>
+  {% set parentCategory = page.taxonomy.category[0] %}
+
+  {% set postArray = [] %}
+
+  {# Grabs all projects and puts it into an array to be manipulated #}
+  {% for post in page.find('/home').children %}
+    {% set postArray = postArray|merge([post]) %}
+  {% endfor %}
+  {% set postRand = random(0..6) %}
+  
+  <a href="{{ postArray[postRand].url }}">
+    <div class="similar-project-container">
+      <img src="{{ postArray[postRand].media['thumbnail.png'].url }}" alt="">
+      <p>{{ postArray[postRand].header.title }}</p>
+    </div>
+  </a>
+
+</div> 
