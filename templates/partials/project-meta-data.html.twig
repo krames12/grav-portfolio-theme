@@ -1,13 +1,15 @@
 <div class="meta-info">
-  <section class="meta-individual">
-    <h4>Client</h4>
-    {% for client in page.header.taxonomy.client  %}
-      <p>{{ client }}</p>
-    {% endfor %}
-  </section>
+  {% if page.header.taxonomy.client != null %}
+    <section class="meta-individual">
+      <h4>Client</h4>
+      {% for client in page.header.taxonomy.client  %}
+        <p>{{ client }}</p>
+      {% endfor %}
+    </section>
+  {% endif %}
   <section class="meta-individual">
     <h4>Tools</h4>
     {% set toolString = page.header.taxonomy.tools|join(', ') %}
-    <p>{{ toolString }}</p>
+    <h4>{{ toolString }}</h4>
   </section>
 </div>

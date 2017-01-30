@@ -9,14 +9,16 @@
     <div class="project-meta-container">
       {% embed 'partials/project-meta-data.html.twig' %}
       {% endembed %}
-      <section class="meta-individual">
-        {% set projectLink = page.header.taxonomy.link|join('')  %}
-        <a href="{{ projectLink }}" class="download-link">
-          <div class="download-button">
-            <span>Download Project</span>
-          </div>
-        </a>
-      </section>
+      {% if page.header.taxonomy.link != null %}
+        <section class="meta-individual">
+          {% set projectLink = page.header.taxonomy.link|join('')  %}
+          <a href="{{ projectLink }}" class="download-link">
+            <div class="download-button">
+              <span>View Project</span>
+            </div>
+          </a>
+        </section>
+      {% endif %}
     </div>
   </div>
 
