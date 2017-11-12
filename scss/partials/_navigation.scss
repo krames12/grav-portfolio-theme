@@ -1,0 +1,102 @@
+.header {
+  background-color: white;
+  color: $slate;
+  border-bottom: 1px solid $ian-green;
+  height: 75px;
+  line-height: 75px;
+  position: fixed;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  .padding {
+    padding: 1em 0;
+  }
+  a {
+    color: $slate;
+  }
+  .logo {
+    font-size: 1.7em;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 75px;
+    transition: all 0.2s ease-in-out;
+    z-index: 5;
+    @media only screen and (max-width: 640px) {
+      font-size: 1.3em;
+    }
+    i {
+      padding: 10px;
+      background-color: $ian-green;
+      color: white;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+  }
+}
+
+.main-nav {
+  float: right;
+  #nav-container {
+    letter-spacing: -1em;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    @media only screen and (max-width: 640px) {
+      position: absolute;
+      max-height: 0px;
+      overflow: hidden;
+      left: 0;
+      top: 70px;
+      width: 100%;
+      color: white;
+      background-color: $ian-green;
+      text-align: center;
+      transition: max-height 0.2s ease-in-out;
+    }
+    &.active {
+      padding-bottom: 25px;
+      max-height: calc(55px * 4);
+    }
+    li {
+      display: inline-block;
+      letter-spacing: normal;
+      height: 100%;
+      width: auto;
+      transition: all 0.2s ease-in-out;
+      @media only screen and (max-width: 640px) {
+        display: block;
+      }
+      a {
+        position: relative;
+        line-height: 45px;
+        padding: 0 20px;
+        white-space: nowrap;
+      }
+      &:hover {
+        background-color: $ian-green;
+        @media only screen and (max-width: 640px) {
+          background-color: $ian-green-dark;
+        }
+      }
+      &.selected{
+        a {
+          color: white;
+          }
+      }
+      position: relative;
+    }
+  }
+  #nav-toggle {
+    display: none;
+    line-height: 75px;
+    cursor: pointer;
+    @media only screen and (max-width: 640px) {
+      display: block;
+    }
+  }
+  @media only screen and (max-width: 640px) {
+    margin-bottom: 5px;
+  }
+}

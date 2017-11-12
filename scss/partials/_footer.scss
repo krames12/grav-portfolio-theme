@@ -1,0 +1,51 @@
+.social-links {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 3rem 0;
+  margin: 10px;
+}
+
+.social {
+  color: black;
+  margin: 0.5rem;
+  text-decoration: none;
+  line-height: 2rem;
+  transition: all 0.3s cubic-bezier(0.42, 0, 0.54, 2.16);
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.twitter {
+  color: #00aced;
+}
+
+.linkedin {
+  color: #007bb6;
+}
+
+.vimeo {
+  color: #1ab7ea;
+}
+
+.dribbble {
+  color: #ea4c89;
+}
+
+.reference-link {
+  color: $slate;
+  background-color: white;
+  font-weight: 700;
+  transition: color 0.2s ease-in-out;
+  &:hover {
+    color: $ian-purple-dark;
+  }
+}
+
+.grav-icon {
+  color: $slate;
+  transition: color 0.2s ease-in-out;
+  &:hover {
+    color: $ian-purple-dark;
+  }
+}
