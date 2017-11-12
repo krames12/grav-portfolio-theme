@@ -23,6 +23,11 @@
     line-height: 75px;
     transition: all 0.2s ease-in-out;
     z-index: 5;
+    &:hover {
+      i {
+        background-color: lighten($brand-primary, 20%);
+      }
+    }
     @media only screen and (max-width: 640px) {
       font-size: 1.3em;
     }
@@ -32,6 +37,7 @@
       color: white;
       border-radius: 50%;
       margin-right: 5px;
+      transition: background-color 0.2s ease-in-out;
     }
   }
 }
@@ -51,7 +57,7 @@
       top: 70px;
       width: 100%;
       color: white;
-      background-color: $brand-primary;
+      background-color: lighten($brand-primary, 20%);
       text-align: center;
       transition: max-height 0.2s ease-in-out;
     }
@@ -67,6 +73,7 @@
       transition: all 0.2s ease-in-out;
       @media only screen and (max-width: 640px) {
         display: block;
+        a {color:white;}
       }
       a {
         position: relative;
@@ -81,10 +88,12 @@
           color: white;
         }
         @media only screen and (max-width: 640px) {
-          background-color: $brand-primary;
+          background-color: lighten($brand-primary, 20%);
+          &:hover { background-color: lighten($brand-primary, 10%); }
         }
       }
       &.selected{
+        background-color: $brand-primary;
         a {
           color: white;
           }
