@@ -162,6 +162,8 @@ blockquote {
   .main-nav #nav-toggle {
     display: none;
     line-height: 75px;
+    padding: 0 30px;
+    margin-right: -50px;
     cursor: pointer; }
     @media only screen and (max-width: 640px) {
       .main-nav #nav-toggle {
@@ -203,13 +205,13 @@ blockquote {
   font-weight: 700;
   transition: color 0.2s ease-in-out; }
   .reference-link:hover {
-    color: #B37DDB; }
+    color: #D16014; }
 
 .grav-icon {
   color: #555555;
   transition: color 0.2s ease-in-out; }
   .grav-icon:hover {
-    color: #B37DDB; }
+    color: #D16014; }
 
 /* Project Meta Data */
 .project-meta-container {
